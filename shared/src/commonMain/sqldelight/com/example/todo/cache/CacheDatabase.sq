@@ -1,0 +1,11 @@
+CREATE TABLE CacheTask (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    key TEXT NOT NULL,
+    value TEXT NOT NULL
+);
+
+insertCache:
+INSERT OR REPLACE INTO CacheTask(key, value) VALUES (?, ?);
+
+getCache:
+SELECT * FROM CacheTask WHERE key = ?;

@@ -24,24 +24,6 @@ class MainActivity : ComponentActivity() {
             App()
         }
     }
-
-    private fun applyWindowInset(){
-        val contentView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0) ?: return
-        ViewCompat.setOnApplyWindowInsetsListener(contentView
-        ) { view, insets ->
-            val systemBarInset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(
-                /*left = */systemBarInset.left,
-               /* top =*/ systemBarInset.top,
-               /* right = */systemBarInset.right,
-              /*  bottom =*/ 0,
-            )
-
-            insets
-        }
-
-        ViewCompat.requestApplyInsets(contentView)
-    }
 }
 
 @Preview
